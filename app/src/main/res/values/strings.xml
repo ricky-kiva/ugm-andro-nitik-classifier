@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Batik Nitik Classifier</string>
+
     <string name="label_toolbar_title">Batik Nitik Classifier ✨</string>
+
+    <string name="toast_permission_granted">Permission granted! Enjoy! 😄</string>
+    <string name="toast_permission_denied">Permission denied 😞</string>
 </resources>
