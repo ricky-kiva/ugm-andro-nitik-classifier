@@ -1,4 +1,4 @@
-package com.rickyslash.batiknitikclassifier.utils
+package com.rickyslash.batiknitikclassifier.helper
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -105,7 +105,7 @@ class ImageClassifierHelper(
     }
 
     companion object {
-        val TAG = ImageClassifierHelper::class.java.simpleName
+        private val TAG = ImageClassifierHelper::class.java.simpleName
         const val DELEGATE_CPU = 0
         const val DELEGATE_GPU = 1
         const val DELEGATE_NNAPI = 2
