@@ -54,6 +54,7 @@ dependencies {
     // CameraX libraries
     implementation libs.androidx.camera.core
     implementation libs.androidx.camera.view
+    implementation libs.androidx.camera.lifecycle
 
     // Tensorflow Lite Task Vision library
     implementation libs.tensorflow.lite.task.vision
