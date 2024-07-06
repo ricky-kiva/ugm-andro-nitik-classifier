@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/fragment_container"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:background="@android:color/transparent"
             android:layout_marginTop="?android:attr/actionBarSize"
             android:keepScreenOn="true"
