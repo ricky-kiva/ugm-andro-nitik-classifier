@@ -47,13 +47,19 @@ dependencies {
     implementation libs.androidx.activity
     implementation libs.androidx.constraintlayout
 
-    // navigation library
+    // Navigation libraries
     implementation libs.androidx.navigation.fragment.ktx
     implementation libs.androidx.navigation.ui.ktx
 
-    // CameraX core library
+    // CameraX libraries
     implementation libs.androidx.camera.core
     implementation libs.androidx.camera.view
+
+    // Tensorflow Lite Task Vision library
+    implementation libs.tensorflow.lite.task.vision
+
+    // Tensorflow GPU Delegate library
+    implementation libs.tensorflow.lite.gpu
 
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
