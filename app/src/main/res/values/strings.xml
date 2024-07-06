@@ -2,7 +2,38 @@
     <string name="app_name">Batik Nitik Classifier</string>
 
     <string name="label_toolbar_title">Batik Nitik Classifier ✨</string>
+    <string name="label_inference_time">Inference Time</string>
+
+    <string name="label_threshold">Threshold</string>
+    <string name="label_max_results">Max Results</string>
+    <string name="label_num_of_threads">Number of Threads</string>
+    <string name="label_delegate">Delegate</string>
+    <string name="label_chosen_model">Model</string>
+
+    <string name="val_inference_default">0ms</string>
+    <string name="val_threshold_default">0.50</string>
+    <string name="val_max_results_default">3</string>
+    <string name="val_num_of_threads_default">2</string>
 
     <string name="toast_permission_granted">Permission granted! Enjoy! 😄</string>
     <string name="toast_permission_denied">Permission denied 😞</string>
+
+    <string name="desc_bottom_sheet_expand_icon">Bottom sheet expandable indicator</string>
+    <string name="desc_threshold_minus">Decrease threshold of max classification result</string>
+    <string name="desc_threshold_plus">Increase threshold of max classification result</string>
+    <string name="desc_max_results_minus">Decrease max classified results</string>
+    <string name="desc_max_results_plus">Increase max classified results</string>
+    <string name="desc_threads_minus">Decrease number of threads used</string>
+    <string name="desc_threads_plus">Increase number of threads used</string>
+
+    <string-array name="labels_spinner_delegate">
+        <item>CPU</item>
+        <item>GPU</item>
+        <item>NNAPI</item>
+    </string-array>
+
+    <string-array name="labels_spinner_model">
+        <item>MobileNet V1</item>
+        <item>NitikNet V1</item>
+    </string-array>
 </resources>

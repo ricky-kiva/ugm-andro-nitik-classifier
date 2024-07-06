@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="toolbar_background">#EEEEEE</color>
+    <color name="bottom_sheet_background">#EEEEEE</color>
+    <color name="bottom_sheet_text_color">@android:color/black</color>
 </resources>
