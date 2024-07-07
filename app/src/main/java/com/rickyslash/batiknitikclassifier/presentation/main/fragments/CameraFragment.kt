@@ -207,20 +207,6 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                         .updateAdapterSize(imageClassifierHelper.maxResults)
                 }
             }
-
-            threadsMinus.setOnClickListener {
-                if (imageClassifierHelper.numThreads > 1) {
-                    imageClassifierHelper.numThreads--
-                    updateControlsUI()
-                }
-            }
-
-            threadsPlus.setOnClickListener {
-                if (imageClassifierHelper.numThreads < 4) {
-                    imageClassifierHelper.numThreads++
-                    updateControlsUI()
-                }
-            }
         }
     }
 
@@ -228,7 +214,6 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
         binding.bottomSheetLayout.apply {
             maxResultsValue.text = imageClassifierHelper.maxResults.toString()
             thresholdValue.text = imageClassifierHelper.threshold.let { "%.2f".format(it) }
-            threadsValue.text = imageClassifierHelper.numThreads.toString()
         }
 
         imageClassifierHelper.clearImageClassifier()

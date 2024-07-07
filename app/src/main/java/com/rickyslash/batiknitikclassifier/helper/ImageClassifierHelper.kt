@@ -14,7 +14,6 @@ import org.tensorflow.lite.task.vision.classifier.ImageClassifier
 
 class ImageClassifierHelper(
     var threshold: Float = 0.5f,
-    var numThreads: Int = 2,
     var maxResults: Int = 3,
     val context: Context,
     val imageClassifierListener: ClassifierListener?
@@ -54,7 +53,7 @@ class ImageClassifierHelper(
             .setScoreThreshold(threshold)
             .setMaxResults(maxResults)
 
-        val baseOptionsBuilder = BaseOptions.builder().setNumThreads(numThreads)
+        val baseOptionsBuilder = BaseOptions.builder().setNumThreads(NUMBER_OF_THREADS)
 
         optionsBuilder.setBaseOptions(baseOptionsBuilder.build())
 
@@ -87,5 +86,6 @@ class ImageClassifierHelper(
     companion object {
         private val TAG = ImageClassifierHelper::class.java.simpleName
         private const val MODEL_NAME = "ugm-nitik-60.tflite"
+        private const val NUMBER_OF_THREADS = -1
     }
 }
