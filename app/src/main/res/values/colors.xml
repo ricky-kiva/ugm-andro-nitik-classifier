@@ -3,7 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="toolbar_background">#EEEEEE</color>
-    <color name="bottom_sheet_background">#EEEEEE</color>
-    <color name="bottom_sheet_text_color">@android:color/black</color>
+    <color name="toolbar_background">#F6EEE3</color>
+    <color name="toolbar_text_color">#E63A2E</color>
+    <color name="bottom_sheet_background">#F6EEE3</color>
+    <color name="bottom_sheet_text_color">#E63A2E</color>
 </resources>

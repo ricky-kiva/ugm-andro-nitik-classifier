@@ -44,7 +44,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@color/bottom_sheet_text_color"
         app:layout_anchor="@id/mcv_results"
         app:layout_anchorGravity="bottom" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

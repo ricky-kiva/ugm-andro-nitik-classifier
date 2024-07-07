@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Batik Nitik Classifier</string>
 
-    <string name="label_toolbar_title">Batik Nitik Classifier ✨</string>
+    <string name="label_toolbar_title">Batik Nitik Classifier</string>
     <string name="label_inference_time">Inference Time</string>
 
     <string name="label_threshold">Threshold</string>
