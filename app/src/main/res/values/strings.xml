@@ -9,6 +9,8 @@
     <string name="label_num_of_threads">Number of Threads</string>
     <string name="label_delegate">Delegate</string>
     <string name="label_chosen_model">Model</string>
+    <string name="label_tips">Tips</string>
+    <string name="label_ok">OK</string>
 
     <string name="val_inference_default">0ms</string>
     <string name="val_threshold_default">0.50</string>
@@ -26,4 +28,14 @@
     <string name="desc_max_results_plus">Increase max classified results</string>
     <string name="desc_threads_minus">Decrease number of threads used</string>
     <string name="desc_threads_plus">Increase number of threads used</string>
+
+    <string name="dialog_title_tips">🚀 Tips</string>
+    <string name="dialog_message_tips">
+        <![CDATA[
+        To confirm predictions accurately amid multiple outcomes, perform these actions & note frequent values:<br><br>
+        <b>Tilt your phone slightly <i>[left]</i>, <i>[right]</i>, <i>[up]</i>, or <i>[down]</i> when analyzing the Batik.</b>
+        ]]>
+    </string>
+
+    <string name="easter_dev_web">rickyslash.my.id 👨‍💻</string>
 </resources>
