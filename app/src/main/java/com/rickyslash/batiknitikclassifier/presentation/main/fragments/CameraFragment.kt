@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.Toast
 import androidx.camera.core.AspectRatio
 import androidx.camera.core.Camera
@@ -219,24 +218,6 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
             threadsPlus.setOnClickListener {
                 if (imageClassifierHelper.numThreads < 4) {
                     imageClassifierHelper.numThreads++
-                    updateControlsUI()
-                }
-            }
-
-            spinnerDelegate.setSelection(0, false)
-            spinnerDelegate.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onNothingSelected(parent: AdapterView<*>?) {}
-                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                    imageClassifierHelper.currentDelegate = position
-                    updateControlsUI()
-                }
-            }
-
-            spinnerModel.setSelection(0, false)
-            spinnerModel.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onNothingSelected(parent: AdapterView<*>?) {}
-                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                    imageClassifierHelper.currentModel = position
                     updateControlsUI()
                 }
             }

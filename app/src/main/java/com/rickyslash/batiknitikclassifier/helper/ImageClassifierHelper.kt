@@ -6,7 +6,6 @@ import android.os.SystemClock
 import android.util.Log
 import android.view.Surface
 import org.tensorflow.lite.support.image.ImageProcessor
-import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.task.core.BaseOptions
 import org.tensorflow.lite.task.core.vision.ImageProcessingOptions
@@ -17,8 +16,6 @@ class ImageClassifierHelper(
     var threshold: Float = 0.5f,
     var numThreads: Int = 2,
     var maxResults: Int = 3,
-    var currentDelegate: Int = 0,
-    var currentModel: Int = 0,
     val context: Context,
     val imageClassifierListener: ClassifierListener?
 ) {
@@ -59,28 +56,11 @@ class ImageClassifierHelper(
 
         val baseOptionsBuilder = BaseOptions.builder().setNumThreads(numThreads)
 
-        when (currentDelegate) {
-            DELEGATE_CPU -> {}
-            DELEGATE_GPU -> {
-                if (CompatibilityList().isDelegateSupportedOnThisDevice)
-                    baseOptionsBuilder.useGpu()
-                else
-                    imageClassifierListener?.onError("GPU is not supported on this device")
-            }
-            DELEGATE_NNAPI -> baseOptionsBuilder.useNnapi()
-        }
-
         optionsBuilder.setBaseOptions(baseOptionsBuilder.build())
-
-        val modelName = when (currentModel) {
-            MODEL_NITIK_60 -> "ugm-nitik-60.tflite"
-            MODEL_MOBILENET_V1 -> "mobilenetv1.tflite"
-            else -> "ugm-nitik-60.tflite"
-        }
 
         try {
             imageClassifier = ImageClassifier
-                .createFromFileAndOptions(context, modelName, optionsBuilder.build())
+                .createFromFileAndOptions(context, MODEL_NAME, optionsBuilder.build())
         } catch (e: IllegalStateException) {
             imageClassifierListener
                 ?.onError("Image classifier failed to initialize. See error logs for details")
@@ -106,10 +86,6 @@ class ImageClassifierHelper(
 
     companion object {
         private val TAG = ImageClassifierHelper::class.java.simpleName
-        const val DELEGATE_CPU = 0
-        const val DELEGATE_GPU = 1
-        const val DELEGATE_NNAPI = 2
-        const val MODEL_NITIK_60 = 0
-        const val MODEL_MOBILENET_V1 = 1
+        private const val MODEL_NAME = "ugm-nitik-60.tflite"
     }
 }

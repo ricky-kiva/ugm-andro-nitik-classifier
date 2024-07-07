@@ -26,15 +26,4 @@
     <string name="desc_max_results_plus">Increase max classified results</string>
     <string name="desc_threads_minus">Decrease number of threads used</string>
     <string name="desc_threads_plus">Increase number of threads used</string>
-
-    <string-array name="labels_spinner_delegate">
-        <item>CPU</item>
-        <item>GPU</item>
-        <item>NNAPI</item>
-    </string-array>
-
-    <string-array name="labels_spinner_model">
-        <item>Nitik Classifier</item>
-        <item>MobileNet V1</item>
-    </string-array>
 </resources>

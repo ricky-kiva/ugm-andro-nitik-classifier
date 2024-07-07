@@ -6,10 +6,4 @@
     </style>
 
     <style name="Theme.BatikNitikClassifier" parent="Base.Theme.BatikNitikClassifier" />
-
-    <style name="BottomSheetSpinnerItemStyle" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
-        <item name="android:textSize">@dimen/bottom_sheet_label_size</item>
-        <item name="android:textColor">@color/bottom_sheet_text_color</item>
-        <item name="android:background">@color/bottom_sheet_background</item>
-    </style>
 </resources>
