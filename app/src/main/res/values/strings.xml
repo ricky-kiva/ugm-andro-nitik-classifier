@@ -34,7 +34,7 @@
     </string-array>
 
     <string-array name="labels_spinner_model">
+        <item>Nitik Classifier</item>
         <item>MobileNet V1</item>
-        <item>NitikNet V1</item>
     </string-array>
 </resources>
