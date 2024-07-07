@@ -42,8 +42,8 @@ class ClassificationResultsAdapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        predictions[position]?.let { pred ->
-            holder.bind(pred.label, pred.score)
+        predictions[position].let { pred ->
+            holder.bind(pred?.label, pred?.score)
         }
     }
 
