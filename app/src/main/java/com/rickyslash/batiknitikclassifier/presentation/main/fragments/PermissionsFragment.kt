@@ -24,8 +24,8 @@ class PermissionsFragment : Fragment() {
             } else Toast.makeText(context, getString(R.string.toast_permission_denied), Toast.LENGTH_SHORT).show()
         }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onStart() {
+        super.onStart()
         when {
             ContextCompat
                 .checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
