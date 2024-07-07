@@ -14,7 +14,7 @@
 
     <string name="val_inference_default">0ms</string>
     <string name="val_threshold_default">0.50</string>
-    <string name="val_max_results_default">3</string>
+    <string name="val_max_results_default">1</string>
     <string name="val_num_of_threads_default">2</string>
     <string name="val_classification_result_default">--</string>
 
