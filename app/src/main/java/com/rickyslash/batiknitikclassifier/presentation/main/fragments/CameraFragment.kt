@@ -134,12 +134,10 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
             .build()
             .also {
                 it.setAnalyzer(cameraExecutor) { img ->
-                    if (!::bitmapBuffer.isInitialized) {
-                        bitmapBuffer = Bitmap
-                            .createBitmap(img.width, img.height, Bitmap.Config.ARGB_8888)
+                    if (!::bitmapBuffer.isInitialized) bitmapBuffer = Bitmap
+                        .createBitmap(img.width, img.height, Bitmap.Config.ARGB_8888)
 
-                        classifyImage(img)
-                    }
+                    classifyImage(img)
                 }
             }
 
