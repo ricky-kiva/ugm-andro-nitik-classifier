@@ -94,6 +94,8 @@
                     android:id="@+id/threshold_minus"
                     android:layout_width="@dimen/bottom_sheet_control_btn_size"
                     android:layout_height="@dimen/bottom_sheet_control_btn_size"
+                    android:background="@drawable/bg_radius_image_button"
+                    android:tint="@color/bottom_sheet_background"
                     android:contentDescription="@string/desc_threshold_minus"
                     android:src="@drawable/round_remove_24" />
 
@@ -114,6 +116,8 @@
                     android:id="@+id/threshold_plus"
                     android:layout_width="@dimen/bottom_sheet_control_btn_size"
                     android:layout_height="@dimen/bottom_sheet_control_btn_size"
+                    android:background="@drawable/bg_radius_image_button"
+                    android:tint="@color/bottom_sheet_background"
                     android:contentDescription="@string/desc_threshold_plus"
                     android:src="@drawable/round_add_24" />
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -150,6 +154,8 @@
                     android:id="@+id/max_results_minus"
                     android:layout_width="@dimen/bottom_sheet_control_btn_size"
                     android:layout_height="@dimen/bottom_sheet_control_btn_size"
+                    android:background="@drawable/bg_radius_image_button"
+                    android:tint="@color/bottom_sheet_background"
                     android:contentDescription="@string/desc_max_results_minus"
                     android:src="@drawable/round_remove_24" />
 
@@ -170,6 +176,8 @@
                     android:id="@+id/max_results_plus"
                     android:layout_width="@dimen/bottom_sheet_control_btn_size"
                     android:layout_height="@dimen/bottom_sheet_control_btn_size"
+                    android:background="@drawable/bg_radius_image_button"
+                    android:tint="@color/bottom_sheet_background"
                     android:contentDescription="@string/desc_max_results_plus"
                     android:src="@drawable/round_add_24" />
             </androidx.appcompat.widget.LinearLayoutCompat>
