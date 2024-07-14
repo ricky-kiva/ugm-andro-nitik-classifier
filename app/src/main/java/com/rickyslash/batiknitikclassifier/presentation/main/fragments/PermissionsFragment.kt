@@ -20,7 +20,7 @@ class PermissionsFragment : Fragment() {
             if (isGranted) {
                 Toast.makeText(context, getString(R.string.toast_permission_granted), Toast.LENGTH_SHORT).show()
                 navigateToCamera()
-            } else Toast.makeText(context, getString(R.string.toast_permission_denied), Toast.LENGTH_SHORT).show()
+            } else Toast.makeText(context, getString(R.string.toast_permission_camera_denied), Toast.LENGTH_SHORT).show()
         }
 
     override fun onStart() {

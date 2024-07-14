@@ -19,7 +19,7 @@
     <string name="val_classification_result_default">--</string>
 
     <string name="toast_permission_granted">Permission granted! Enjoy! 😄</string>
-    <string name="toast_permission_denied">Permission denied 😞</string>
+    <string name="toast_permission_camera_denied">App cannot run without Camera permission 😞</string>
 
     <string name="desc_bottom_sheet_expand_icon">Bottom sheet expandable indicator</string>
     <string name="desc_threshold_minus">Decrease threshold of max classification result</string>
