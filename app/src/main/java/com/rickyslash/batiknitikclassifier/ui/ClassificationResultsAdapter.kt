@@ -20,7 +20,7 @@ class ClassificationResultsAdapter
 
         newPredictions?.let { newPred ->
             if (newPred.isNotEmpty()) {
-                val sortedCategories = newPred[0].categories.sortedBy { it.index }
+                val sortedCategories = newPred[0].categories.sortedByDescending  { it.score }
                 val min = min(sortedCategories.size, predictions.size)
 
                 for (i in 0 until  min) {
