@@ -7,14 +7,18 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.Display
+import android.view.GestureDetector
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.camera.core.AspectRatio
 import androidx.camera.core.Camera
+import androidx.camera.core.CameraControl
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.FocusMeteringAction
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
@@ -29,6 +33,7 @@ import com.rickyslash.batiknitikclassifier.helper.ImageClassifierHelper
 import org.tensorflow.lite.task.vision.classifier.Classifications
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
     private var _binding: FragmentCameraBinding? = null
@@ -38,6 +43,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
     private lateinit var imageClassifierHelper: ImageClassifierHelper
     private lateinit var bitmapBuffer: Bitmap
     private lateinit var cameraExecutor: ExecutorService
+    private lateinit var cameraControl: CameraControl
 
     private val classificationResultsAdapter by lazy {
         ClassificationResultsAdapter().apply {
@@ -74,6 +80,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
 
         binding.viewFinder.post {
             setupCamera()
+            setupTapToFocus()
         }
 
         initBottomSheetControls()
@@ -146,6 +153,10 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
             camera = cameraProvider
                 .bindToLifecycle(this, cameraSelector, preview, imageAnalyzer)
 
+            camera?.let {
+                cameraControl = it.cameraControl
+            }
+
             preview?.setSurfaceProvider(binding.viewFinder.surfaceProvider)
         } catch (exc: Exception) {
             Log.e(TAG, "Use care binding failed: $exc")
@@ -156,6 +167,30 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
         image.use { bitmapBuffer.copyPixelsFromBuffer(image.planes[0].buffer) }
 
         imageClassifierHelper.classify(bitmapBuffer, getScreenOrientation())
+    }
+
+    private fun setupTapToFocus() {
+        val gestureDetector = GestureDetector(requireContext(), object : GestureDetector.SimpleOnGestureListener() {
+            override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
+                val factory = binding.viewFinder.meteringPointFactory
+                val point = factory.createPoint(e.x, e.y)
+                val action = FocusMeteringAction.Builder(point, FocusMeteringAction.FLAG_AF)
+                    .setAutoCancelDuration(2, TimeUnit.SECONDS)
+                    .build()
+
+                cameraControl.startFocusAndMetering(action)
+                return true
+            }
+        })
+
+        binding.viewFinder.setOnTouchListener { v, event ->
+            gestureDetector.onTouchEvent(event)
+
+            if (event.action == MotionEvent.ACTION_UP)
+                v.performClick()
+
+            return@setOnTouchListener true
+        }
     }
 
     @Suppress("DEPRECATION")
