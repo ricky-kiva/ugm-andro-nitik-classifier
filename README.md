@@ -13,6 +13,8 @@
 
 An Android app that identifies **Batik Nitik** motifs from live camera feeds using a local TensorFlow Lite classification model, displaying real-time top predictions and confidence scores across 60 classes.
 
+![Batik Nitik Classifier preview](docs/assets/readme-prev-batik-nitik-classifier-c.jpg)
+
 ## Features
 
 - Live classification of 60 batik nitik motifs through the back camera.
