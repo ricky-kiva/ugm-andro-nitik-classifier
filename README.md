@@ -34,6 +34,10 @@ An Android app that identifies **Batik Nitik** motifs from live camera feeds usi
 
 ## Getting Started
 
+To install without building, download the `.apk` from the [Releases](https://github.com/ricky-kiva/ugm-andro-nitik-classifier/releases/latest) page and install it on an Android 7.0+ device.
+
+To build from source:
+
 ```bash
 git clone https://github.com/ricky-kiva/ugm-andro-nitik-classifier.git
 cd ugm-andro-nitik-classifier
